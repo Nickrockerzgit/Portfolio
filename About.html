@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="About.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Rishabh.</a>
+        <nav class="navbar">
+            <a href="Portfolio.html" class="active">Home</a>
+            <a href="About.html">About</a>
+            <a href="Work.html">My Work</a>
+            <a href="Contact.html">Contact</a>
+        </nav>  
+    </header>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./assets/myImg.png" alt="Home Image">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am a passionate Full Stack Web Developer with a strong background in creating dynamic and responsive websites and web applications. My expertise spans both front-end and back-end development, ensuring a seamless user experience and robust functionality. I enjoy problem-solving and am continuously learning new technologies to improve my skills and stay up-to-date with industry trends.</p>
+                    <div class="tab-title"> 
+                        <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab(event, 'experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Front-End Development:</span><br>HTML, CSS, JavaScript, React, Angular</li>
+                            <li><span>Back-End Development:</span><br>Node.js, Express, Django, Ruby on Rails</li>
+                            <li><span>Database Management:</span><br>MySQL, MongoDB, PostgreSQL</li>
+                            <li><span>Version Control:</span><br>Git, GitHub</li>
+                            <li><span>Other Skills:</span><br>RESTful APIs, GraphQL, Agile Methodologies</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>UI/UX:</span><br>Designing Web/App interface</li>
+                            <li><span>Web Development:</span><br>Web/App Development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Bachelor of Science in Computer Science:</span><br>UIT RGPV (Shivpuri), 2023 - 2027</li>
+                            <li><span>Full Stack Web Development Bootcamp:</span><br> 2024</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(event, tabname){
+            for(let tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(let tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
